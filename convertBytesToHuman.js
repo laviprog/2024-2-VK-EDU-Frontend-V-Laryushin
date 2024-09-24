@@ -9,7 +9,7 @@
  */
 export default function convertBytesToHuman(bytes) {
   
-  if (typeof bytes !== 'number' || !isFinite(bytes) || isNaN(bytes)) {
+  if (typeof bytes !== 'number' || !isFinite(bytes)) {
     throw new TypeError('Expected a valid number');
   }
 

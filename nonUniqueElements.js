@@ -8,8 +8,8 @@ export default function nonUniqueElements(data) {
   const map = new Map();
 
   for (const item of data) {
-    map.set(item, (map.get(item) || 0) + 1);
+    map.set(item, map.has(item));
   }
   
-  return data.filter(item => map.get(item) > 1);
+  return data.filter(item => map.get(item));
 }

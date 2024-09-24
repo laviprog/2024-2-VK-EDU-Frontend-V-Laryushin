@@ -18,12 +18,18 @@ test('Throws a RangeError exception if a negative number is passed', () => {
   expect(() => convertBytesToHuman(-10192)).toThrow(RangeError);
 });
 
+const units = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']
+
 test('The correct value', () => {
+  let num = 1
+
+  for (const unit of units) {
+    expect(convertBytesToHuman(num)).toBe(`1 ${unit}`);
+    num *= 1024;
+}
+
   expect(convertBytesToHuman(5)).toBe("5 B")
-  expect(convertBytesToHuman(1024)).toBe("1 KB")
   expect(convertBytesToHuman(123123123)).toBe("117.42 MB")
   expect(convertBytesToHuman(0)).toBe("0 B")
-  expect(convertBytesToHuman(1)).toBe("1 B")
   expect(convertBytesToHuman(1023)).toBe("1023 B")
-  expect(convertBytesToHuman(1024*1024*1024)).toBe("1 GB")
 });
