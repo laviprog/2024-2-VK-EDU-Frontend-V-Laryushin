@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head lang="en">
     <meta charset="UTF-8">
     <title>Send a message</title>
@@ -9,9 +9,9 @@
 <body>
 <div class="chat">
     <header class="chat-header">
-        <button class="btn user-info">
+        <button class="btn user-info" title="Super Long Username That Should Be Truncated">
             <span class="material-symbols-outlined">account_circle</span>
-            <span class="name">User</span>
+            <span class="name">Super Long Username That Should Be Truncated</span>
         </button>
         <div class="tools">
             <button class="btn" id="search">
@@ -29,11 +29,31 @@
         <button class="btn" id="emoji">
             <span class="material-symbols-outlined">sentiment_satisfied</span>
         </button>
-        <textarea id="inputMessage" class="message-input" placeholder="Type your message..."></textarea>
+        <button class="btn" id="attachment">
+            <span class="material-symbols-outlined">attach_file</span>
+        </button>
+        <label for="inputMessage"></label><textarea id="inputMessage" class="message-input" placeholder="Type your message..."></textarea>
         <button class="btn" id="sender">
             <span class="material-symbols-outlined">send</span>
         </button>
     </footer>
+
+
 </div>
+
+<div class="modal" id="imageModal">
+    <div class="modal-content">
+        <span class="btn close" id="modalCloser">&times;</span>
+        <img id="imagePreview" src="" alt="Preview">
+        <input type="file" id="imgInput" accept="image/*">
+        <div class="input-container">
+            <label for="inputMessageWithImg"></label><textarea id="inputMessageWithImg" class="message-input" placeholder="Type your message..."></textarea>
+            <button class="btn" id="senderImg">
+                <span class="material-symbols-outlined">send</span>
+            </button>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
