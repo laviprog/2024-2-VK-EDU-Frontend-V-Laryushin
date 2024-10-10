@@ -25,7 +25,6 @@ body {
     gap: 15px;
     color: inherit;
     font-size: 20px;
-    max-width: 250px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -33,7 +32,6 @@ body {
 
 .user-info .name {
     display: inline-block;
-    max-width: 200px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
